@@ -96,18 +96,32 @@ model B and obtained adversarial inputs $x_{i, adv}$ for any $i=1, ..., n$. [Kur
 these adversarial examples can be used against the original model A with high success rate.
 
 ## A Bayesian Neural Network Perspective?
-The literature has developed several defenses against adversarial examples, including defense distillation
-and adversarial learning --generate adversarial examples during training. In [Lewis and Gal](https://arxiv.org/pdf/1806.00667.pdf), they explore sufficient conditions 
-for neural network to be robust to adversarial example. 
+Bayesian Neural Network (BNN) are neural networks where the weights are assumed to be drawn from a prior distribution. Given a set of 
+samples, we learn the posterior distribution of those weights. Bayesian models are interesting 
+in the context of adversarial examples, since they quantify how uncertain they are about 
+their predictions. A natural question in the context of BNN is whether
+adversarial examples are more likely to occur where the BNN is more uncertain 
+about its predictions. The answer remains debated. [Li et al](https://arxiv.org/pdf/1802.06552.pdf) show that 
+adversarial examples are more likely in low input density regions, but that they can still exist in high input density
+regions.
 
-Consider idealized Bayesian Neural Network that are continuous models with high confidence on the training set.
-It means that around each sample in the training set , there exists a small neighborhood around which 
-the BNN has high confidence. Outside of those neighborhoods, if the BNN has low confidence,
-then there exists no adversarial example. It seems that the key takeaway from this result is that 
+In this line of work
+[Lewis and Gal](https://arxiv.org/pdf/1806.00667.pdf) connects the epistemic unccertainty of
+a BNN and explore sufficient conditions 
+for a BNN to be robust to adversarial example. 
+
+Consider an idealized Bayesian Neural Network that is a continuous models with high confidence on the training set.
+It means that around each sample in the training set, there exists a small neighborhood around which 
+the BNN has high confidence and is right about it. If the BNN has low confidence outside of those neighborhoods,
+then there exists no adversarial example. The result seems almost tautological, but it has
+an interesting takeaway message for future research:
 robustness to adversarial examples relates to how fast uncertainty increases as a BNN sees more 
-misclassified examples and how slowly output probability decreases from training samples.
+misclassified examples and how slowly output probability decreases in the neighborhood of training samples.
 
 ## Conclusion
+Adverarial seems to be an active area of research because they demonstrate potential vulnerabilities
+of neural networks that could limit their deployment in applications where safety/security is a concern. 
+
 
 
 
