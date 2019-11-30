@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Notes on Adversarial Learning</title>
+<title>Adversarial Learning</title>
 
 <!-- favicon -->
 <link rel="shortcut icon" type="image/x-icon" href="/deeplearning/assets/img/favicon.ico" />
@@ -79,7 +79,7 @@
   <div class="card">
 
     
-    <h1 class="card__title article_title">Notes on adversarial learning</h1>
+    <h1 class="card__title article_title">Adversarial learning</h1>
     
 
     
@@ -177,7 +177,7 @@ dataset as the child model.</p>
 <p>In practice, the attacker queries model A (parent) for n inputs $x_{i}$ and obtained model’s A
 predictions $y$. The attacker trains a model B (child) to predict the queried $y_{i}$ from inputs 
 $x_{i}$. Since the attacker knows the structure of model B, he can launch a white-box attack on
-model B and obtained adversarial inputs $x_{i, adv}$ for any $i=1, …, n$. <strong>Papers</strong> show that 
+model B and obtained adversarial inputs $x_{i, adv}$ for any $i=1, …, n$. <a href="https://arxiv.org/pdf/1607.02533.pdf">Kurakin et al.</a> show that 
 these adversarial examples can be used against the original model A with high success rate.</p>
 
 <h2 id="a-bayesian-neural-network-perspective">A Bayesian Neural Network Perspective?</h2>
@@ -191,6 +191,8 @@ the BNN has high confidence. Outside of those neighborhoods, if the BNN has low 
 then there exists no adversarial example. It seems that the key takeaway from this result is that 
 robustness to adversarial examples relates to how fast uncertainty increases as a BNN sees more 
 misclassified examples and how slowly output probability decreases from training samples.</p>
+
+<h2 id="conclusion">Conclusion</h2>
 
 </div>
 
@@ -230,24 +232,6 @@ var disqus_config = function () {
     <ul>
       
 
-      
-      <li>
-
-
-<a href="/deeplearning/2015/09/26/sample-post-with-all-elements.html">
-  <div class="card">
-
-    <h1 class="card__title">Sample Post with All Elements</h1>
-
-    <div class="card__date">2015 / 09 / 26</div>
-
-    
-    
-    <div class="card__excerpt">This post shows all customized elements. Sed ut perspiciatis unde...</div>
-
-  </div>
-</a>
-</li>
       
     </ul>
   </div>
