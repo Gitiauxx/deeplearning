@@ -2,10 +2,10 @@
 # ============================================================================
 # if your site is serving on https://xxx.github.io, set `baseurl: /`
 # if your site is serving on https://xxx.github.io/path, set `baseurl: /path`
-baseurl: /book
+baseurl: /deeplearning
 
 # site title
-title: Book
+title: Notes on Deep Learning
 
 # site favicon, absolute path required
 favicon: /assets/img/favicon.ico
