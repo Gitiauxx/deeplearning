@@ -1,5 +1,5 @@
 ---
-title: Notes on Adversarial Learning
+title: Adversarial Learning
 date: 2019-11-26
 ---
 This post collects notes on a neural network vulnerability known as adversarial
@@ -92,7 +92,7 @@ dataset as the child model.
 In practice, the attacker queries model A (parent) for n inputs $x_{i}$ and obtained model's A
 predictions $y$. The attacker trains a model B (child) to predict the queried $y_{i}$ from inputs 
 $x_{i}$. Since the attacker knows the structure of model B, he can launch a white-box attack on
-model B and obtained adversarial inputs $x_{i, adv}$ for any $i=1, ..., n$. **Papers** show that 
+model B and obtained adversarial inputs $x_{i, adv}$ for any $i=1, ..., n$. [Kurakin et al.](https://arxiv.org/pdf/1607.02533.pdf) show that 
 these adversarial examples can be used against the original model A with high success rate.
 
 ## A Bayesian Neural Network Perspective?
@@ -107,6 +107,7 @@ then there exists no adversarial example. It seems that the key takeaway from th
 robustness to adversarial examples relates to how fast uncertainty increases as a BNN sees more 
 misclassified examples and how slowly output probability decreases from training samples.
 
+## Conclusion
 
 
 
