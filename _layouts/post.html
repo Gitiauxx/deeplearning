@@ -19,16 +19,16 @@ layout: page
   </div>
 
 
-  <div class="post__comment">
-    {% if site.disqus and page.comment %}
-    <div class="post__comment--on">
-      {% assign url = page.url | absolute_url %}
-      {% include disqus.html username = site.disqus url = url id = page.id %}
-    </div>
-    {% else %}
-    <div class="post__comment--off">Comment is not allowed.</div>
-    {% endif %}
-  </div>
+<!--  <div class="post__comment">-->
+<!--    {% if site.disqus and page.comment %}-->
+<!--    <div class="post__comment&#45;&#45;on">-->
+<!--      {% assign url = page.url | absolute_url %}-->
+<!--      {% include disqus.html username = site.disqus url = url id = page.id %}-->
+<!--    </div>-->
+<!--    {% else %}-->
+<!--    <div class="post__comment&#45;&#45;off">Comment is not allowed.</div>-->
+<!--    {% endif %}-->
+<!--  </div>-->
 
 
   <div class="post__pagination">
