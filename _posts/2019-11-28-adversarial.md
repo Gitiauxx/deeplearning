@@ -95,9 +95,9 @@ $x_{i}$. Since the attacker knows the structure of model B, he can launch a whit
 model B and obtained adversarial inputs $x_{i, adv}$ for any $i=1, ..., n$. **Papers** show that 
 these adversarial examples can be used against the original model A with high success rate.
 
-## Bayesian Neural Network: what does it take to make robust to adversarial examples?
+## A Bayesian Neural Network Perspective?
 The literature has developed several defenses against adversarial examples, including defense distillation
-and adversarial learning --generate adversarial examples during training. In **Paper**, they explore sufficient conditions 
+and adversarial learning --generate adversarial examples during training. In [Lewis and Gal](https://arxiv.org/pdf/1806.00667.pdf), they explore sufficient conditions 
 for neural network to be robust to adversarial example. 
 
 Consider idealized Bayesian Neural Network that are continuous models with high confidence on the training set.
