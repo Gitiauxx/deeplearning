@@ -181,21 +181,37 @@ model B and obtained adversarial inputs $x_{i, adv}$ for any $i=1, …, n$. <a h
 these adversarial examples can be used against the original model A with a high success rate.</p>
 
 <h2 id="a-bayesian-neural-network-perspective">A Bayesian Neural Network Perspective?</h2>
+
+<h3 id="bayesian-neural-network">Bayesian Neural Network</h3>
 <p>Bayesian Neural Network (BNN) are neural networks where the weights are assumed to be drawn from a prior distribution. Given a set of 
-samples, we learn the posterior distribution of those weights. Bayesian models are interesting 
-in the context of adversarial examples, since they quantify how uncertain they are about 
+samples, we learn the posterior distribution of those weights.</p>
+
+<p>This Bayesian representation of neural networks relates to Gaussian Processes. In the classification case, the binary output $y\in {0, 1}$ for an input $x$ is
+modeled as a draw from a Bernouilly distribution with probability $\sigma((f(x))$, where $\sigma(.)$ is either the sigmoid or probit link; and 
+$f(x)$ is a latent variable. Uncertainty about $f$ is modeled by assuming that $f$ is a Gaussian Process (see <a href="http://www.jmlr.org/papers/volume9/nickisch08a/nickisch08a.pdf">Nickisch and Rasmussen</a>). 
+Given sample points $\mathcal{D}$, the objective is of Gaussian Process Classification is to estimate the posterior distribution
+$p(f|\mathcal{D}$ and then the predictive distribution for an input $x^{*}$</p>
+
+<script type="math/tex; mode=display">p(y^{*}|\mathcal{D}, x^{*}) = \displaystyle\int\sigma(f(x^{*}))p(f|\mathcal{D})df.</script>
+
+<p>Although the integral is intractable, the posterior distribution $p(f|\mathcal{D}$ can be approximated by variational methods. 
+Because Gaussian Process can be modeled as a neural network with an infinite width, <a href="http://proceedings.mlr.press/v48/gal16.pdf">Gal et Ghahramani</a>
+shows that the predicted distribution can be approximated by simulating many forward passes over a neural network trained with Monte Carlo
+dropouts.</p>
+
+<h3 id="which-bnn-are-robust-to-adversarial-attacks">Which BNN are robust to adversarial attacks?</h3>
+<p>Bayesian models are interesting in the context of adversarial examples, since they quantify how uncertain they are about 
 their predictions. A natural question in the context of BNN is whether
 adversarial examples are more likely to occur where the BNN is more uncertain 
 about its predictions. The answer remains debated. <a href="https://arxiv.org/pdf/1802.06552.pdf">Li et al</a> show that 
 adversarial examples are more likely in low input density regions, but that they can still exist in high input density
-regions.</p>
+regions. <a href="https://arxiv.org/abs/1711.08244">Rawat et al</a> show that across a large class of BNN, predictions for adversarial 
+examples are more uncertain.</p>
 
 <p>In this line of work
 <a href="https://arxiv.org/pdf/1806.00667.pdf">Lewis and Gal</a> connects the epistemic uncertainty of
 a BNN and explore sufficient conditions 
-for a BNN to be robust to adversarial examples.</p>
-
-<p>Consider an idealized Bayesian Neural Network that is a continuous model with high confidence on the training set.
+for a BNN to be robust to adversarial examples. Consider an idealized Bayesian Neural Network that is a continuous model with high confidence on the training set.
 It means that around each sample in the training set, there exists a small neighborhood around which 
 the BNN has high confidence and is right about it. If the BNN has low confidence outside of those neighborhoods,
 then there exists no adversarial example. The result seems almost tautological, but it has
@@ -207,6 +223,30 @@ misclassified examples and how slowly output probability decreases in the neighb
 <p>Adversarial examples are currently an active area of research because they demonstrate potential vulnerabilities
 of neural networks that could limit their deployment in applications where safety/security is a concern.</p>
 
+<h2 id="references">References</h2>
+<p><a href="http://proceedings.mlr.press/v48/gal16.pdf">Gal, Yarin, and Zoubin Ghahramani. “Dropout as a bayesian approximation: Representing model uncertainty in deep learning.” In international conference on machine learning, pp. 1050-1059. 2016.</a></p>
+
+<p><a href="https://arxiv.org/pdf/1806.00667.pdf">Gal, Yarin, and Lewis Smith. “Sufficient conditions for idealised models to have no adversarial examples: a theoretical and empirical study with Bayesian neural networks.”</a>.</p>
+
+<p><a href="https://arxiv.org/pdf/1412.6572.pdf">Goodfellow, Ian J., Jonathon Shlens, and Christian Szegedy. “Explaining and harnessing adversarial examples.” (2014).</a></p>
+
+<p><a href="https://arxiv.org/pdf/1607.02533.pdf">Kurakin, Alexey, Ian Goodfellow, and Samy Bengio. “Adversarial examples in the physical world.”(2016)</a></p>
+
+<p><a href="https://arxiv.org/pdf/1802.06552.pdf">Li, Yingzhen, John Bradshaw, and Yash Sharma. “Are generative classifiers more robust to adversarial attacks?.” (2018).</a></p>
+
+<p><a href="http://www.jmlr.org/papers/volume9/nickisch08a/nickisch08a.pdf">Nickisch, Hannes, and Carl Edward Rasmussen. “Approximations for binary Gaussian process classification.” Journal of Machine Learning Research 9, no. Oct (2008): 2035-2078.</a></p>
+
+<p><a href="https://arxiv.org/pdf/1711.08244.pdf">Rawat, Ambrish, Martin Wistuba, and Maria-Irina Nicolae. “Adversarial phenomenon in the eyes of Bayesian deep learning.”(2017)</a></p>
+</div>
+
+  </div>
+
+
+<!--  <div class="post__comment">-->
+<!--    -->
+<!--    <div class="post__comment&#45;&#45;off">Comment is not allowed.</div>-->
+<!--    -->
+<!--  </div>-->
 
 
   <div class="post__pagination">
