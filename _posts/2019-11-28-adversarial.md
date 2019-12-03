@@ -101,15 +101,15 @@ these adversarial examples can be used against the original model A with a high 
 Bayesian Neural Network (BNN) are neural networks where the weights are assumed to be drawn from a prior distribution. Given a set of 
 samples, we learn the posterior distribution of those weights. 
 
-This Bayesian representation of neural networks relates to Gaussian Processes. In the classification case, the binary output $y\in {0, 1}$ for an input $x$ is
+This Bayesian representation of neural networks relates to Gaussian Processes. In the classification case, the binary output $y=0, 1$ for an input $x$ is
 modeled as a draw from a Bernouilly distribution with probability $\sigma((f(x))$, where $\sigma(.)$ is either the sigmoid or probit link; and 
 $f(x)$ is a latent variable. Uncertainty about $f$ is modeled by assuming that $f$ is a Gaussian Process (see [Nickisch and Rasmussen](http://www.jmlr.org/papers/volume9/nickisch08a/nickisch08a.pdf)). 
 Given sample points $\mathcal{D}$, the objective is of Gaussian Process Classification is to estimate the posterior distribution
-$p(f|\mathcal{D}$ and then the predictive distribution for an input $x^{*}$
+$p(f|\mathcal{D})$ and then the predictive distribution for an input $x^{*}$
 
 $$  p(y^{*}|\mathcal{D}, x^{*}) = \displaystyle\int\sigma(f(x^{*}))p(f|\mathcal{D})df.$$
 
-Although the integral is intractable, the posterior distribution $p(f|\mathcal{D}$ can be approximated by variational methods. 
+Although the integral is intractable, the posterior distribution $p(f|\mathcal{D})$ can be approximated by variational methods. 
 Because Gaussian Process can be modeled as a neural network with an infinite width, [Gal et Ghahramani](http://proceedings.mlr.press/v48/gal16.pdf)
 shows that the predicted distribution can be approximated by simulating many forward passes over a neural network trained with Monte Carlo
 dropouts.
@@ -122,7 +122,7 @@ adversarial examples are more likely to occur where the BNN is more uncertain
 about its predictions. The answer remains debated. [Li et al](https://arxiv.org/pdf/1802.06552.pdf) show that 
 adversarial examples are more likely in low input density regions, but that they can still exist in high input density
 regions. [Rawat et al](https://arxiv.org/abs/1711.08244) show that across a large class of BNN, predictions for adversarial 
-examples are more uncertain.
+examples are more uncertain. 
 
 In this line of work
 [Lewis and Gal](https://arxiv.org/pdf/1806.00667.pdf) connects the epistemic uncertainty of
