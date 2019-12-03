@@ -102,7 +102,7 @@ Bayesian Neural Network (BNN) are neural networks where the weights are assumed 
 samples, we learn the posterior distribution of those weights. 
 
 This Bayesian representation of neural networks relates to Gaussian Processes. In the classification case, the binary output $y=0, 1$ for an input $x$ is
-modeled as a draw from a Bernouilly distribution with probability $\sigma((f(x))$, where $\sigma(.)$ is either the sigmoid or probit link; and 
+modeled as a draw from a Bernouilly distribution with probability $\sigma((f(x))$, where $\sigma(.)$ is either the logit or probit link; and 
 $f(x)$ is a latent variable. Uncertainty about $f$ is modeled by assuming that $f$ is a Gaussian Process (see [Nickisch and Rasmussen](http://www.jmlr.org/papers/volume9/nickisch08a/nickisch08a.pdf)). 
 Given sample points $\mathcal{D}$, the objective is of Gaussian Process Classification is to estimate the posterior distribution
 $p(f|\mathcal{D})$ and then the predictive distribution for an input $x^{*}$
